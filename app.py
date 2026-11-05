@@ -4,16 +4,19 @@ from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
 
+
 class Users(Resource):
     def get(self):
         return {'message': 'User 1'}
 
+
 class User(Resource):
-    def get(self):
+    def post(self):
         return {'message': 'teste'}
 
     def get(self, cpf):
         return {'message': f'User with CPF: {cpf}'}
+
 
 api.add_resource(Users, '/users')
 api.add_resource(User, '/user', '/user/<string:cpf>')
@@ -21,4 +24,3 @@ api.add_resource(User, '/user', '/user/<string:cpf>')
 
 if __name__ == '__main__':
     app.run(debug=True)
-
