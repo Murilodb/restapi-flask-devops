@@ -23,4 +23,5 @@ api.add_resource(User, '/user', '/user/<string:cpf>')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
+    print("Server is running on port 8080")
