@@ -19,3 +19,9 @@ services:
       - mongo
     volumes:
       - .:/app
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 192.168.200.0/24
