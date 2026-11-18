@@ -2,18 +2,22 @@ from flask import Flask
 from flask_restful import Resource, Api
 from flask_mongoengine import MongoEngine
 
+
 app = Flask(__name__)
-api = Api(app)
-db = MongoEngine(app)
 
 app.config['MONGODB_SETTINGS'] = {
     "db": "myapp",
-    "host": "mongobd",
+    "host": "mongo",
     "port": 27017,
     "username": "admin",
     "password": "admin"
 
 }
+
+api = Api(app)
+db = MongoEngine(app)
+
+
 
 class UserModel(db.Document):
     cpf = db.StringField(required=True, unique=True)
@@ -25,6 +29,7 @@ class UserModel(db.Document):
 
 class Users(Resource):
     def get(self):
+        
         return {'message': 'User 1'}
 
 
