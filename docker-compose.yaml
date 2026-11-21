@@ -14,11 +14,14 @@ services:
       context: .
     ports:
      - "5000:5000"
+    environment:
+      - FLASK_ENV=development      
     restart: always
     depends_on:
       - mongo
     volumes:
       - .:/app
+    cpus: 0.10
 
 networks:
   default:

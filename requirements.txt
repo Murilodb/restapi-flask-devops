@@ -19,5 +19,6 @@ pyflakes==4.1.0
 pymongo==4.20.0
 pytz==2026.6
 six==1.17.0
+validate-docbr==2.0.1
 Werkzeug==2.2.2
 WTForms==3.3.2
