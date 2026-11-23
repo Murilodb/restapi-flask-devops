@@ -15,12 +15,17 @@ services:
     ports:
      - "5000:5000"
     environment:
-      - FLASK_ENV=development      
+      - FLASK_ENV=development
+      - MONGODB_DB=myapp
+      - MONGODB_HOST=mongo
+      - MONGODB_PORT=27017
+      - MONGODB_USERNAME=admin
+      - MONGODB_PASSWORD=admin   
     restart: always
     depends_on:
       - mongo
     volumes:
-      - .:/app
+      - ./applications:/app/applications
     cpus: 0.10
 
 networks:

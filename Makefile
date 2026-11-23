@@ -6,4 +6,4 @@ test:
 
 compose: test
 	@echo "Running docker compose..."
-	@docker compose up --build
+	docker compose up --build
